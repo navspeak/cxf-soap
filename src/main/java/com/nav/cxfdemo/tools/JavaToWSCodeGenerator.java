@@ -1,4 +1,4 @@
-package com.nav.cxfdemo.com.nav.cxfdemo.tools;
+package com.nav.cxfdemo.tools;
 
 import org.apache.cxf.tools.java2ws.JavaToWS;
 
