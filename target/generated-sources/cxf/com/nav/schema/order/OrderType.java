@@ -1,6 +1,8 @@
 
 package com.nav.schema.order;
 
+import com.google.common.collect.ImmutableList;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -69,7 +71,14 @@ public class OrderType {
         if (orderItem == null) {
             orderItem = new ArrayList<OrderItemType>();
         }
-        return this.orderItem;
+        return ImmutableList.copyOf(this.orderItem);
+    }
+
+    public void setOrderItem(OrderItemType ordItem) {
+        if (this.orderItem == null) {
+            this.orderItem = new ArrayList<OrderItemType>();
+        }
+        this.orderItem.add(ordItem);
     }
 
     /**

@@ -20,7 +20,7 @@
 
         <jaxws:endpoint
                 id="orders"
-                implementor="com.nav.cxfdemo.DefaultOrdersEndpoint"
+                implementor="com.nav.cxfdemo.orders.DefaultOrdersEndpoint"
                 address="/services/orders"/>
 
 </beans>

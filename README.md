@@ -7,9 +7,9 @@
    <soapenv:Body>
       <ord:orderInquiry>
          <unqiueId>1</unqiueId>
-         <orderQty>1</orderQty>
-         <accountId>2</accountId>
-         <ean13>1</ean13>
+         <orderQty>88</orderQty>
+         <accountId>988</accountId>
+         <ean13>111111111</ean13>
       </ord:orderInquiry>
    </soapenv:Body>
 </soapenv:Envelope>
@@ -17,6 +17,18 @@
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <ns2:orderInquiryResponse xmlns:ns2="http://www.nav.com/schema/Order">
+         <order>
+            <orderItem>
+               <lineNumber>0</lineNumber>
+               <expectedShippingDate>2020-03-19-04:00</expectedShippingDate>
+               <book>
+                  <ean13>111111111</ean13>
+                  <title>A CXF book</title>
+               </book>
+               <qtyShipped>0</qtyShipped>
+            </orderItem>
+            <orderStatus>READY</orderStatus>
+         </order>
          <account>
             <accountId>1</accountId>
          </account>

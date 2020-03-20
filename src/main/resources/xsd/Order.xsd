@@ -53,7 +53,7 @@
 
     <xs:complexType name="OrderInquiryResponseType">
         <xs:sequence>
-            <xs:element name="order" minOccurs="1" maxOccurs="unbounded" type="tns:OrderType"/>
+            <xs:element name="order" minOccurs="1" maxOccurs="1" type="tns:OrderType"/>
             <xs:element name="account" minOccurs="1" maxOccurs="1" type="tns:AccountType"/>
         </xs:sequence>
     </xs:complexType>
