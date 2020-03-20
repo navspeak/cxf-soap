@@ -33,7 +33,7 @@ public void myMethod(int x, int y);
 * xmlns:soap = "http://www.w3.org/2001/soap/envelop/"
 # RPC / encoded
 
-##### [WSDL](#RPC-Encoded-WSDL)
+##### WSDL
 ```xml
 <message name="myMethodRequest">
     <part name="x" type="int"/>
@@ -69,9 +69,9 @@ public void myMethod(int x, int y);
     
  # RPC / Literal
 ##### WSDL
-Same as [RPC /Encoded](#RPC-Encoded-WSDL)
+Same as  [RPC Encoded](#rpc--encoded) 
 
-##### [SOAP Message](#RPC-Literal-Soap-Message)
+##### SOAP Message
 ```xml
 <soap:envelope>
     <soap:body> 
@@ -186,4 +186,4 @@ no one uses
  </soap:envelope>          
  ```
 
-Soap message is same as that of [RPC Literal](#RPC-Literal-Soap-Message). Except that in RPC/literal the <myMethod> was the name of operation but here it is name of the wrapper element which the single input message's part refers to. This is just a way to put back operation name back to message 
+Soap message is same as that of [RPC Literal](#rpc--literal). Except that in RPC/literal the <myMethod> was the name of operation but here it is name of the wrapper element which the single input message's part refers to. This is just a way to put back operation name back to message 

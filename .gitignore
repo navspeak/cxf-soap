@@ -10,3 +10,4 @@ target/maven-status
 target/test-classes
 *.iml
 generated
+#http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/
