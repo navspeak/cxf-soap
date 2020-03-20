@@ -3,5 +3,10 @@
 **/classes
 target/classes
 target/cxf-codegen-plugin-markers
+target/apache-cxf-jax-ws-demo-1.0-SNAPSHOT
+target/generated-sources/annotations
+target/generated-test-sources
+target/maven-status
+target/test-classes
 *.iml
 generated
