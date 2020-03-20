@@ -1,0 +1,62 @@
+<xs:schema xmlns:tns="http://www.nav.com/schema/Order" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="unqualified" targetNamespace="http://www.nav.com/schema/Order" version="1.0">
+
+    <xs:element name="orderInquiry" type="tns:OrderInquiryType" />
+    <xs:element name="orderInquiryResponse" type="tns:OrderInquiryResponseType"/>
+
+    <xs:complexType name="OrderInquiryType">
+        <xs:sequence>
+            <xs:element name="unqiueId" minOccurs="1" maxOccurs="1" type="xs:int"/>
+            <xs:element name="orderQty" minOccurs="1" maxOccurs="1" type="xs:int"/>
+            <xs:element name="accountId" minOccurs="1" maxOccurs="1" type="xs:int"/>
+            <xs:element name="ean13" minOccurs="1" maxOccurs="1" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AccountType">
+        <xs:sequence>
+            <xs:element name="accountId" minOccurs="1" maxOccurs="1" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BookType">
+        <xs:sequence>
+            <xs:element name="ean13" minOccurs="1" maxOccurs="1" type="xs:long"/>
+            <xs:element name="title" minOccurs="1" maxOccurs="1" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="OrderStatusType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="READY"/>
+            <xs:enumeration value="FULFILLED"/>
+            <xs:enumeration value="BACKORDER"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="OrderItemType">
+        <xs:sequence>
+            <xs:element name="lineNumber" minOccurs="1" maxOccurs="1" type="xs:int"/>
+            <xs:element name="expectedShippingDate" minOccurs="0" maxOccurs="1" type="xs:date"/>
+            <xs:element name="book" minOccurs="1" maxOccurs="1" type="tns:BookType"/>
+            <xs:element name="price" minOccurs="1" maxOccurs="1" type="xs:decimal"/>
+            <xs:element name="qtyShipped" minOccurs="1" maxOccurs="1" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrderType">
+        <xs:sequence>
+            <xs:element name="orderItem" minOccurs="1" maxOccurs="unbounded" type="tns:OrderItemType"/>
+            <xs:element name="orderStatus" minOccurs="1" maxOccurs="1" type="tns:OrderStatusType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrderInquiryResponseType">
+        <xs:sequence>
+            <xs:element name="order" minOccurs="1" maxOccurs="unbounded" type="tns:OrderType"/>
+            <xs:element name="account" minOccurs="1" maxOccurs="1" type="tns:AccountType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>

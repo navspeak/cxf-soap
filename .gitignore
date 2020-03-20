@@ -1,5 +1,7 @@
 .idea/**
 .settings
 **/classes
-target
+target/classes
+target/cxf-codegen-plugin-markers
 *.iml
+generated
