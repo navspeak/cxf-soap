@@ -67,7 +67,9 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
+<!--  Made some custom changes to generated code. So commented out codegen to prevent regeneration that would overwrite
+      the custom changes -->
+      <!--      <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>3.3.5</version>
@@ -76,7 +78,7 @@
                         <id>generate-sources</id>
                         <phase>generate-sources</phase>
                         <configuration>
-             <!--               <sourceRoot>${basedir}/generated-sources/cxf</sourceRoot>-->
+             &lt;!&ndash;               <sourceRoot>${basedir}/generated-sources/cxf</sourceRoot>&ndash;&gt;
                             <sourceRoot>src/main/java-generated</sourceRoot>
                             <wsdlOptions>
                                 <wsdl>${basedir}/src/main/resources/wsdl/Orders.wsdl</wsdl>
@@ -87,7 +89,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
         <!--        </pluginManagement>-->
     </build>
